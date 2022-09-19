@@ -1,0 +1,120 @@
+{
+	"info": {
+		"_postman_id": "f7e60f0d-4c94-4127-91e8-2255c51468c4",
+		"name": "fiscal-printer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4266400"
+	},
+	"item": [
+		{
+			"name": "create_invoice",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.environment.set(\"authToken\", jsonData.token);",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"invoiceDate\":\"19/09/2022\",\r\n\"Customer\": \"INGEINT CA\",\r\n\"Identification\": \"J501414114\",\r\n\"Address1\": \"Calle los leones Edificio INTER\",\r\n\"Address2\": \"\",\r\n\"Phone\": \"04145008443\",\r\n\"invoice_lines\": [{\r\n\t\t\"product_code\": \"010101\",\r\n\t\t\"qtyEntered\": 1,\r\n        \"product_name\": \"PLAN 100 MBPS\",\r\n        \"priceEntered\": 9.18,\r\n        \"tax\": 16.0\r\n\t},\r\n    {\r\n\t\t\"product_code\": \"02020202\",\r\n\t\t\"qtyEntered\": 1,\r\n        \"product_name\": \"PRORRATEO 100 MBPS\",\r\n        \"priceEntered\": 9.18,\r\n        \"tax\": 16.0\r\n\t}\r\n    ],\r\n\"payment_methods\": [{\r\n\"01\": 18.36 \r\n}],\r\n\"sub_total\": 18.36,\r\n\"discount\": 0,\r\n\"amount_total\": \r\n\"\"\r\n}"
+				},
+				"url": {
+					"raw": "http://0.0.0.0:5000/create_invoice",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "5000",
+					"path": [
+						"create_invoice"
+					]
+				},
+				"description": "Create authentication token with user name and password. The return token is use as Authorization request header (Bearer {token}) for subsequent api/v1/auth call"
+			},
+			"response": []
+		},
+		{
+			"name": "get_invoice_number",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{authToken}}"
+					}
+				],
+				"url": {
+					"raw": "https://ws.sismode.com/api/v1/models/rv_stock_by_product?filter=value=\"ID-01289\"&$select=Value,QtyOnHand",
+					"protocol": "https",
+					"host": [
+						"ws",
+						"sismode",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"models",
+						"rv_stock_by_product"
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "value=\"ID-01289\""
+						},
+						{
+							"key": "$select",
+							"value": "Value,QtyOnHand"
+						}
+					]
+				},
+				"description": "Get records with where clause filter."
+			},
+			"response": []
+		}
+	]
+}
