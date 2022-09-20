@@ -11,11 +11,11 @@ def create_invoice(self):
         f.write("CLIENTE:         " + self['Customer'] + "\n")
         f.write("RIF:             " + self['Identification'] + "\n")
         f.write("DIRECCION1:      " + self['Address1'] + "\n")
-        if self['Address2']:
+        if 'Address2' in self:
             f.write("DIRECCION2:      " + self['Address2'] + "\n")
         else:
             f.write("DIRECCION2:      " + "\n")
-        if self['Phone']:
+        if 'Phone' in self:
             f.write("TELEFONO:        " + self['Phone'] + "\n")
         else:
             f.write("TELEFONO:        " + "\n")
@@ -54,7 +54,6 @@ def create_invoice(self):
         f.write("NOTA 4:".ljust(7) + "\n")
 
         f.close()
-
         file_destination = 'C:/FACTURAS/' + self['file_name']
         shutil.move(filename,  file_destination)
 
