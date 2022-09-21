@@ -12,6 +12,13 @@ def create_invoice():
     return "Created"
 
 
+@app.route('/create_credit_note', methods=['POST'])
+def create_credit_note():
+    file = request.get_json()
+    fiscal.create_credit_note(file)
+    return "Created"
+
+
 @app.route('/get_invoice_number', methods=['GET'])
 def get_invoice_number():
     number = request.args['number']
