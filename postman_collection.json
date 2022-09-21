@@ -46,10 +46,10 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\"invoiceDate\":\"19/09/2022\",\r\n\"Customer\": \"INGEINT CA\",\r\n\"Identification\": \"J501414114\",\r\n\"Address1\": \"Calle los leones Edificio INTER\",\r\n\"Address2\": \"\",\r\n\"Phone\": \"04145008443\",\r\n\"invoice_lines\": [{\r\n\t\t\"product_code\": \"010101\",\r\n\t\t\"qtyEntered\": 1,\r\n        \"product_name\": \"PLAN 100 MBPS\",\r\n        \"priceEntered\": 9.18,\r\n        \"tax\": 16.0\r\n\t},\r\n    {\r\n\t\t\"product_code\": \"02020202\",\r\n\t\t\"qtyEntered\": 1,\r\n        \"product_name\": \"PRORRATEO 100 MBPS\",\r\n        \"priceEntered\": 9.18,\r\n        \"tax\": 16.0\r\n\t}\r\n    ],\r\n\"payment_methods\": [{\r\n\"01\": 18.36 \r\n}],\r\n\"sub_total\": 18.36,\r\n\"discount\": 0,\r\n\"amount_total\": \r\n\"\"\r\n}"
+					"raw": "{\r\n\"file_name\": \"ODOO.001\",\r\n\"invoice_number\": \"1499\",    \r\n\"invoiceDate\":\"21/09/2022\",\r\n\"Customer\": \"INGEINT VENEZUELA CA\",\r\n\"Identification\": \"J501414114\",\r\n\"Address1\": \"Calle los leones Edificio INTER\",\r\n\"Address2\": \"\",\r\n\"Phone\": \"04145008443\",\r\n\"invoice_lines\": [{\r\n\t\t\"product_code\": \"010101\",\r\n\t\t\"qtyEntered\": 1.0,\r\n        \"product_name\": \"PLAN 100 MBPS\",\r\n        \"priceEntered\": 9.18,\r\n        \"tax\": 16.0,\r\n        \"period\": \"DEL 01/09/2022 AL 01/10/2022\"\r\n\t},\r\n    {\r\n\t\t\"product_code\": \"02020202\",\r\n\t\t\"qtyEntered\": 1,\r\n        \"product_name\": \"PRORRATEO 100 MBPS\",\r\n        \"priceEntered\": 9.18,\r\n        \"tax\": 16.0\r\n\t}\r\n    ],\r\n\"payment_methods\": [{\r\n\"01\": 18.36 \r\n}],\r\n\"sub_total\": 18.36,\r\n\"discount\": 0.0,\r\n\"amount_total\": \"21.30\"\r\n}"
 				},
 				"url": {
-					"raw": "http://0.0.0.0:5000/create_invoice",
+					"raw": "http://0.0.0.0:3000/create_invoice",
 					"protocol": "http",
 					"host": [
 						"0",
@@ -57,9 +57,69 @@
 						"0",
 						"0"
 					],
-					"port": "5000",
+					"port": "3000",
 					"path": [
 						"create_invoice"
+					]
+				},
+				"description": "Create authentication token with user name and password. The return token is use as Authorization request header (Bearer {token}) for subsequent api/v1/auth call"
+			},
+			"response": []
+		},
+		{
+			"name": "create_credit_note",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.environment.set(\"authToken\", jsonData.token);",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"file_name\": \"ODOO.001\",    \r\n\"invoice_number\": \"NC00020\",\r\n\"invoiceDate\":\"21/09/2022\",\r\n\"Customer\": \"INGEINT VENEZUELA CA\",\r\n\"Identification\": \"J501414114\",\r\n\"Address1\": \"Calle los leones Edificio INTER\",\r\n\"Address2\": \"\",\r\n\"Phone\": \"04145008443\",\r\n\"invoice_lines\": [{\r\n\t\t\"product_code\": \"010101\",\r\n\t\t\"qtyEntered\": 1,\r\n        \"product_name\": \"PLAN 100 MBPS\",\r\n        \"priceEntered\": 9.18,\r\n        \"tax\": 16.0\r\n\t},\r\n    {\r\n\t\t\"product_code\": \"02020202\",\r\n\t\t\"qtyEntered\": 1,\r\n        \"product_name\": \"PRORRATEO 100 MBPS\",\r\n        \"priceEntered\": 9.18,\r\n        \"tax\": 16.0\r\n\t}\r\n    ],\r\n\"payment_methods\": [{\r\n\"01\": 18.36 \r\n}],\r\n\"sub_total\": 18.36,\r\n\"discount\": 0,\r\n\"amount_total\": 21.30,\r\n\"invoice_affected\": \"1499\"\r\n}"
+				},
+				"url": {
+					"raw": "http://0.0.0.0:3000/create_credit_note",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "3000",
+					"path": [
+						"create_credit_note"
 					]
 				},
 				"description": "Create authentication token with user name and password. The return token is use as Authorization request header (Bearer {token}) for subsequent api/v1/auth call"
@@ -88,27 +148,22 @@
 					}
 				],
 				"url": {
-					"raw": "https://ws.sismode.com/api/v1/models/rv_stock_by_product?filter=value=\"ID-01289\"&$select=Value,QtyOnHand",
-					"protocol": "https",
+					"raw": "http://0.0.0.0:3000/get_invoice_number?number=0001454",
+					"protocol": "http",
 					"host": [
-						"ws",
-						"sismode",
-						"com"
+						"0",
+						"0",
+						"0",
+						"0"
 					],
+					"port": "3000",
 					"path": [
-						"api",
-						"v1",
-						"models",
-						"rv_stock_by_product"
+						"get_invoice_number"
 					],
 					"query": [
 						{
-							"key": "filter",
-							"value": "value=\"ID-01289\""
-						},
-						{
-							"key": "$select",
-							"value": "Value,QtyOnHand"
+							"key": "number",
+							"value": "0001454"
 						}
 					]
 				},
