@@ -46,16 +46,16 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\"file_name\": \"ODOO.001\",\r\n\"invoice_number\": \"1499\",    \r\n\"invoiceDate\":\"21/09/2022\",\r\n\"Customer\": \"INGEINT VENEZUELA CA\",\r\n\"Identification\": \"J501414114\",\r\n\"Address1\": \"Calle los leones Edificio INTER\",\r\n\"Address2\": \"\",\r\n\"Phone\": \"04145008443\",\r\n\"invoice_lines\": [{\r\n\t\t\"product_code\": \"010101\",\r\n\t\t\"qtyEntered\": 1.0,\r\n        \"product_name\": \"PLAN 100 MBPS\",\r\n        \"priceEntered\": 9.18,\r\n        \"tax\": 16.0,\r\n        \"period\": \"DEL 01/09/2022 AL 01/10/2022\"\r\n\t},\r\n    {\r\n\t\t\"product_code\": \"02020202\",\r\n\t\t\"qtyEntered\": 1,\r\n        \"product_name\": \"PRORRATEO 100 MBPS\",\r\n        \"priceEntered\": 9.18,\r\n        \"tax\": 16.0\r\n\t}\r\n    ],\r\n\"payment_methods\": [{\r\n\"01\": 18.36 \r\n}],\r\n\"sub_total\": 18.36,\r\n\"discount\": 0.0,\r\n\"amount_total\": \"21.30\"\r\n}"
+					"raw": "{\r\n\"file_name\": \"ODOO.001\",\r\n\"document_number\": \"1520\",    \r\n\"invoiceDate\":\"21/09/2022\",\r\n\"Customer\": \"INGEINT VENEZUELA CA\",\r\n\"Identification\": \"J501414114\",\r\n\"Address1\": \"Calle los leones Edificio INTER\",\r\n\"Address2\": \"\",\r\n\"Phone\": \"04145008443\",\r\n\"invoice_lines\": [{\r\n\t\t\"product_code\": \"010101\",\r\n\t\t\"qtyEntered\": 1.0,\r\n        \"product_name\": \"PLAN 100 MBPS\",\r\n        \"priceEntered\": 9.18,\r\n        \"tax\": 16.0,\r\n        \"period\": \"DEL 01/09/2022 AL 01/10/2022\"\r\n\t},\r\n    {\r\n\t\t\"product_code\": \"02020202\",\r\n\t\t\"qtyEntered\": 1,\r\n        \"product_name\": \"PRORRATEO 100 MBPS\",\r\n        \"priceEntered\": 9.18,\r\n        \"tax\": 16.0\r\n\t}\r\n    ],\r\n\"payment_methods\": [{\r\n    \"01\": 9.18\r\n},\r\n{\r\n    \"02\": 0.00\r\n},\r\n{\r\n    \"03\": 0.00\r\n},\r\n{\r\n    \"04\": 0.00\r\n},\r\n{\r\n    \"05\": 0.00\r\n},\r\n{\r\n    \"06\": 0.00\r\n},\r\n{\r\n    \"07\": 0.00\r\n},\r\n{\r\n    \"08\": 9.18\r\n},\r\n{\r\n    \"09\": 0.00\r\n},\r\n{\r\n    \"10\": 0.00\r\n},\r\n{\r\n    \"11\": 0.00\r\n}\r\n],\r\n\"sub_total\": 18.36,\r\n\"discount\": 0.0,\r\n\"amount_total\": \"21.30\"\r\n}"
 				},
 				"url": {
-					"raw": "http://0.0.0.0:3000/create_invoice",
+					"raw": "http://10.28.101.155:3000/create_invoice",
 					"protocol": "http",
 					"host": [
-						"0",
-						"0",
-						"0",
-						"0"
+						"10",
+						"28",
+						"101",
+						"155"
 					],
 					"port": "3000",
 					"path": [
@@ -106,7 +106,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\"file_name\": \"ODOO.001\",    \r\n\"invoice_number\": \"NC00020\",\r\n\"invoiceDate\":\"21/09/2022\",\r\n\"Customer\": \"INGEINT VENEZUELA CA\",\r\n\"Identification\": \"J501414114\",\r\n\"Address1\": \"Calle los leones Edificio INTER\",\r\n\"Address2\": \"\",\r\n\"Phone\": \"04145008443\",\r\n\"invoice_lines\": [{\r\n\t\t\"product_code\": \"010101\",\r\n\t\t\"qtyEntered\": 1,\r\n        \"product_name\": \"PLAN 100 MBPS\",\r\n        \"priceEntered\": 9.18,\r\n        \"tax\": 16.0\r\n\t},\r\n    {\r\n\t\t\"product_code\": \"02020202\",\r\n\t\t\"qtyEntered\": 1,\r\n        \"product_name\": \"PRORRATEO 100 MBPS\",\r\n        \"priceEntered\": 9.18,\r\n        \"tax\": 16.0\r\n\t}\r\n    ],\r\n\"payment_methods\": [{\r\n\"01\": 18.36 \r\n}],\r\n\"sub_total\": 18.36,\r\n\"discount\": 0,\r\n\"amount_total\": 21.30,\r\n\"invoice_affected\": \"1499\"\r\n}"
+					"raw": "{\r\n\"file_name\": \"ODOO.001\",    \r\n\"document_number\": \"NC00020\",\r\n\"invoiceDate\":\"21/09/2022\",\r\n\"Customer\": \"INGEINT VENEZUELA CA\",\r\n\"Identification\": \"J501414114\",\r\n\"Address1\": \"Calle los leones Edificio INTER\",\r\n\"Address2\": \"\",\r\n\"Phone\": \"04145008443\",\r\n\"invoice_lines\": [{\r\n\t\t\"product_code\": \"010101\",\r\n\t\t\"qtyEntered\": 1,\r\n        \"product_name\": \"PLAN 100 MBPS\",\r\n        \"priceEntered\": 9.18,\r\n        \"tax\": 16.0\r\n\t},\r\n    {\r\n\t\t\"product_code\": \"02020202\",\r\n\t\t\"qtyEntered\": 1,\r\n        \"product_name\": \"PRORRATEO 100 MBPS\",\r\n        \"priceEntered\": 9.18,\r\n        \"tax\": 16.0\r\n\t}\r\n    ],\r\n\"payment_methods\": [{\r\n\"01\": 18.36 \r\n}],\r\n\"sub_total\": 18.36,\r\n\"discount\": 0,\r\n\"amount_total\": 21.30,\r\n\"invoice_affected\": \"1499\"\r\n}"
 				},
 				"url": {
 					"raw": "http://0.0.0.0:3000/create_credit_note",
@@ -148,13 +148,13 @@
 					}
 				],
 				"url": {
-					"raw": "http://0.0.0.0:3000/get_invoice_number?number=0001454",
+					"raw": "http://10.28.101.155:3000/get_invoice_number?number=1500",
 					"protocol": "http",
 					"host": [
-						"0",
-						"0",
-						"0",
-						"0"
+						"10",
+						"28",
+						"101",
+						"155"
 					],
 					"port": "3000",
 					"path": [
@@ -163,7 +163,7 @@
 					"query": [
 						{
 							"key": "number",
-							"value": "0001454"
+							"value": "1500"
 						}
 					]
 				},

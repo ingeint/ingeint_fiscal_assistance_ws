@@ -19,7 +19,7 @@ def create_credit_note():
     return "Created"
 
 
-@app.route('/get_invoice_number', methods=['GET'])
+@app.route('/get_fiscal_number', methods=['GET'])
 def get_invoice_number():
     number = request.args['number']
     table = DBF('C:\PRINTSPOOL\DATOS3.DBF', load=True)
