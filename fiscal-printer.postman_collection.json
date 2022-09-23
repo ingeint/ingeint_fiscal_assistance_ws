@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "f7e60f0d-4c94-4127-91e8-2255c51468c4",
+		"_postman_id": "15ef8c94-35dd-4529-9453-465566fca1e1",
 		"name": "fiscal-printer",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "4266400"
@@ -148,7 +148,7 @@
 					}
 				],
 				"url": {
-					"raw": "http://10.28.101.155:3000/get_invoice_number?number=1500",
+					"raw": "http://10.28.101.155:3000/get_fiscal_number?number=1500",
 					"protocol": "http",
 					"host": [
 						"10",
@@ -158,7 +158,7 @@
 					],
 					"port": "3000",
 					"path": [
-						"get_invoice_number"
+						"get_fiscal_number"
 					],
 					"query": [
 						{

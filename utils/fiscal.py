@@ -1,10 +1,13 @@
 from . import ingeint_utils
 import shutil
-import os
+from pathlib import Path
 
 
 def create_invoice(self):
-    filename = "C:/PROCESANDO/" + self['file_name']
+    route = "C:/PROCESANDO/"
+    Path(route).mkdir(parents=True, exist_ok=True)
+
+    filename = route + self['file_name']
     with open(filename, 'w') as f:
         f.write("FACTURA:         " + self['document_number'] + "\n")
         f.write("FECHA:           " + str(self['invoiceDate']) + "\n")
@@ -87,7 +90,9 @@ def create_invoice(self):
 
 
 def create_credit_note(self):
-    filename = "C:/PROCESANDO/" + self['file_name']
+    route = "C:/PROCESANDO/"
+    Path(route).mkdir(parents=True, exist_ok=True)
+    filename = route + self['file_name']
     with open(filename, 'w') as f:
         f.write("DEVOLUCION:      " + self['document_number'] + "\n")
         f.write("FECHA:           " + str(self['invoiceDate']) + "\n")
