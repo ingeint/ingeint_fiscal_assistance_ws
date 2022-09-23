@@ -32,7 +32,7 @@ def create_invoice(self):
             product_price_unit = str(line['priceEntered']).rjust(13)
             f.write('{} {} {} {} {}'.format(product_name, product_code, product_qty, product_tax,
                                             product_price_unit) + "\n")
-            if 'period' in line:
+            if 'comment' in line:
                 f.write(line['comment'] + "\n")
 
         f.write("SUB-TOTAL:".ljust(22) + str(self['sub_total']) + "\n")
