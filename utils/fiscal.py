@@ -64,13 +64,13 @@ def create_invoice(self):
                 f.write("Transf en USD".ljust(22) + str(payment['06']) + "\n")
                 continue
             if '07' in payment:
-                f.write("Transf EURO:".ljust(22) + str(payment['07']) + "\n")
+                f.write("Pago IGTF TRF:".ljust(22) + str(payment['07']) + "\n")
                 continue
             if '08' in payment:
                 f.write("Efect USD:".ljust(22) + str(payment['08']) + "\n")
                 continue
             if '09' in payment:
-                f.write("Efect EURO:".ljust(22) + str(payment['09']) + "\n")
+                f.write("Pago IGTF EFE:".ljust(22) + str(payment['09']) + "\n")
                 continue
             if '10' in payment:
                 f.write("Pago movil:".ljust(22) + str(payment['10']) + "\n")
