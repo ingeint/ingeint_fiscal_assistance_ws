@@ -61,16 +61,16 @@ def create_invoice(self):
                 f.write("Tranf en Bs:".ljust(22) + str(payment['05']) + "\n")
                 continue
             if '06' in payment:
-                f.write("Transf en USD".ljust(22) + str(payment['06']) + "\n")
+                f.write("DIVISA 2".ljust(22) + str(payment['06']) + "\n")
                 continue
             if '07' in payment:
-                f.write("Pago IGTF TRF:".ljust(22) + str(payment['07']) + "\n")
+                f.write("DIVISA 2 IGTF:".ljust(22) + str(payment['07']) + "\n")
                 continue
             if '08' in payment:
                 f.write("Efect USD:".ljust(22) + str(payment['08']) + "\n")
                 continue
             if '09' in payment:
-                f.write("Pago IGTF EFE:".ljust(22) + str(payment['09']) + "\n")
+                f.write("DIVISA 1 IGTF:".ljust(22) + str(payment['09']) + "\n")
                 continue
             if '10' in payment:
                 f.write("Pago movil:".ljust(22) + str(payment['10']) + "\n")
@@ -146,16 +146,16 @@ def create_credit_note(self):
                 f.write("Tranf en Bs:".ljust(22) + str(payment['05']) + "\n")
                 continue
             if '06' in payment:
-                f.write("Transf en USD".ljust(22) + str(payment['06']) + "\n")
+                f.write("DIVISA 2".ljust(22) + str(payment['06']) + "\n")
                 continue
             if '07' in payment:
-                f.write("Pago IGTF TRF:".ljust(22) + str(payment['07']) + "\n")
+                f.write("DIVISA 2 IGTF:".ljust(22) + str(payment['07']) + "\n")
                 continue
             if '08' in payment:
                 f.write("Efect USD:".ljust(22) + str(payment['08']) + "\n")
                 continue
             if '09' in payment:
-                f.write("Pago IGTF EFE:".ljust(22) + str(payment['09']) + "\n")
+                f.write("DIVISA 1 IGTF:".ljust(22) + str(payment['09']) + "\n")
                 continue
             if '10' in payment:
                 f.write("Pago movil:".ljust(22) + str(payment['10']) + "\n")
